@@ -1,0 +1,18 @@
+include ./output
+include ./input
+include ./exec
+include ./look
+include ./keybindings
+
+floating_modifier $mod normal
+for_window [window_type="dialog"] floating enable
+
+bar {
+    swaybar_command waybar
+    position top
+    hidden_state hide
+    mode hide
+    modifier $mod
+}
+
+include /etc/sway/config.d/*

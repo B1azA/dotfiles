@@ -1,0 +1,34 @@
+input * {
+    xkb_layout cz,cz
+    xkb_variant ,coder
+    xkb_options grp:shifts_toggle,compose:ins
+}
+
+input type:keyboard xkb_numlock enabled
+
+input "2:10:TPPS/2_IBM_TrackPoint" {
+  accel_profile adaptive
+  pointer_accel 0.7
+  natural_scroll disabled
+  scroll_factor 1.0
+  left_handed disabled
+  middle_emulation disabled
+}
+
+input "1739:0:Synaptics_TM3276-022" {
+  events enabled
+  accel_profile adaptive
+  pointer_accel 0.0
+  natural_scroll disabled
+  scroll_factor 1.0
+  scroll_method two_finger
+  left_handed disabled
+  tap enabled
+  tap_button_map lrm
+  drag enabled
+  drag_lock disabled
+  dwt enabled
+  dwtp enabled
+  middle_emulation enabled
+  click_method button_areas
+}

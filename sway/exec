@@ -1,0 +1,3 @@
+exec_always /usr/bin/lxpolkit
+exec_always nm-applet
+exec_always blueman-applet
