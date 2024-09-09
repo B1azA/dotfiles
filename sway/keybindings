@@ -169,6 +169,10 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+bindsym $mod+p exec playerctl play-pause
+bindsym $mod+n exec playerctl next
+bindsym $mod+Shift+P exec playerctl previous
+
 bindsym Print+w exec shotman -c window
 bindsym Print+o exec shotman -c output
 bindsym Print+r exec shotman -c region
