@@ -1,3 +1,10 @@
-exec_always /usr/bin/lxpolkit
+exec_always brightnessctl s 40%
+
+exec_always pipewire
+exec_always lxpolkit
 exec_always nm-applet
 exec_always blueman-applet
+
+exec_always --no-startup-id dbus-update-activation-environment --all
+
+exec_always batsignal

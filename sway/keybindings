@@ -3,7 +3,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty
+set $term alacritty
 set $dmenu dmenu_path | fuzzel --dmenu | xargs swaymsg exec --
 set $menu fuzzel
 
@@ -137,11 +137,11 @@ mode "Resize" {
 bindsym $mod+r mode "Resize"
 
 mode "System" {
-    bindsym Shift+s exec swaymsg mode "default" && systemctl poweroff
-    bindsym s exec swaymsg mode "default" && systemctl suspend 
-    bindsym Shift+l exec swaymsg mode "default" && systemctl suspend && swaylock
+    bindsym Shift+s exec swaymsg mode "default" && loginctl poweroff
+    bindsym s exec swaymsg mode "default" && loginctl suspend 
+    bindsym Shift+l exec swaymsg mode "default" && loginctl suspend && swaylock
     bindsym l exec swaymsg mode "default" && swaylock
-    bindsym Shift+r exec swaymsg mode "default" && systemctl reboot
+    bindsym Shift+r exec swaymsg mode "default" && loginctl reboot
     bindsym e exec swaymsg mode "default" && swaymsg exit
 
     bindsym Return mode "default"
@@ -162,6 +162,8 @@ bindsym XF86AudioMicMute exec pamixer --default-source -t && ~/.config/sway/scri
 
 bindsym XF86MonBrightnessUp exec brightnessctl s +5% && sh ~/.config/sway/scripts/notify-brightness.sh
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%- && sh ~/.config/sway/scripts/notify-brightness.sh
+bindsym Ctrl+XF86MonBrightnessUp exec brightnessctl s +1% && sh ~/.config/sway/scripts/notify-brightness.sh
+bindsym Ctrl+XF86MonBrightnessDown exec brightnessctl s 1%- && sh ~/.config/sway/scripts/notify-brightness.sh
 
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -172,3 +174,10 @@ bindsym Print+o exec shotman -c output
 bindsym Print+r exec shotman -c region
 
 bindsym $mod+m exec wl-present mirror
+
+
+# App keybindings
+
+bindsym $mod+Ctrl+m exec vlc ~/Music --random --loop
+bindsym $mod+Ctrl+f exec alacritty -e ranger
+bindsym $mod+Ctrl+b exec firefox

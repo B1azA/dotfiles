@@ -8,7 +8,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["tray"],
-    "modules-right": ["custom/pacman", "pulseaudio", "backlight", "sway/language","battery", "clock"],
+    "modules-right": ["pulseaudio", "backlight", "sway/language","battery", "clock"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -86,9 +86,9 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "timezone": "Europe/Prague",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d. %m. %Y}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -136,7 +136,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}    {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -151,17 +151,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
-    },
-    "custom/pacman": {
-      "format": "{icon}{}",
-      "return-type": "json",
-      "format-icons": {
-        "pending-updates": "   ",
-        "updated": "  "
-      },
-      "exec-if": "which waybar-updates",
-      "exec": "waybar-updates"
+        "on-click": "alacritty -e pulsemixer"
     },
 }
 
