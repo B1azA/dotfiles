@@ -2,7 +2,7 @@ if status is-interactive
     fish_config theme choose DraculaOfficial
     starship init fish | source
     zoxide init fish | source
-    set -g -x PAGER "nvim -c 'Man!'"
+    set -g -x PAGER "nvimpager"
 end
 
 # Created by `pipx` on 2024-03-06 13:11:44
