@@ -157,8 +157,8 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && ~/
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && ~/.config/sway/scripts/notify-volume.sh
 bindsym Ctrl+XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1% && ~/.config/sway/scripts/notify-volume.sh
 bindsym Ctrl+XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1% && ~/.config/sway/scripts/notify-volume.sh
-bindsym XF86AudioMute exec pamixer -t && ~/.config/sway/scripts/notify-volume.sh
-bindsym XF86AudioMicMute exec pamixer --default-source -t && ~/.config/sway/scripts/notify-volume.sh
+bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioMicMute exec pamixer --default-source -t
 
 bindsym XF86MonBrightnessUp exec brightnessctl s +5% && sh ~/.config/sway/scripts/notify-brightness.sh
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%- && sh ~/.config/sway/scripts/notify-brightness.sh
