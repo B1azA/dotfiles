@@ -6,7 +6,10 @@ if status is-interactive
 end
 
 # Created by `pipx` on 2024-03-06 13:11:44
-set PATH $PATH /home/b1aza/.local/bin
+set PATH $PATH $HOME/.local/bin
+set DOTNET_ROOT $HOME/.dotnet
+set PATH $PATH $HOME/.dotnet
+set PATH $PATH $HOME/.dotnet/tools
 
 # opam configuration
 source /home/b1aza/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
