@@ -1,0 +1,18 @@
+[opener]
+play = [
+	{ run = 'vlc "$@"', orphan = true, for= "unix"}
+]
+edit = [
+	{ run = 'nvim "$@"', block = true}
+]
+open = [
+	{ run = 'xdg-open "$@"', desc = "Open" },
+]
+image = [
+	{ run = "geeqie", orphan = true}
+]
+
+[open]
+prepend_rules = [
+	{ mime = "image/*", use ="image"}
+]
