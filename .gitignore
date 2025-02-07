@@ -1,0 +1,18 @@
+# Everything
+*
+nvim/
+!*/
+
+# Except
+!.gitignore
+!alacritty/*
+!dunst/*
+!fish/*
+!fuzzel/*
+!helix/*
+!kitty/*
+!ranger/*
+!starship/*
+!sway/*
+!swaylock/*
+!waybar/*
