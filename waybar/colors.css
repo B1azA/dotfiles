@@ -1,5 +1,5 @@
 @define-color background-darker rgba(30, 31, 41, 230);
-@define-color background #282a36;
+@define-color background alpha(#282a36, 0.99);
 @define-color selection #44475a;
 @define-color foreground #f8f8f2;
 @define-color blue #6272a4;
