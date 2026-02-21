@@ -74,6 +74,12 @@ bindsym $mod+Shift+r reload
     bindsym $mod+Shift+$10 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+	# Move workspaces across outputs
+	bindsym $mod+Ctrl+Right move workspace to output right
+	bindsym $mod+Ctrl+Left move workspace to output left
+	bindsym $mod+Ctrl+$right move workspace to output right
+	bindsym $mod+Ctrl+$left move workspace to output left
 #
 # Layout stuff:
 #
@@ -111,7 +117,20 @@ bindsym $mod+Shift+r reload
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-#
+
+
+## Scratchpad 1
+bindsym $mod+Shift+Mod5+plus unmark s1, mark s1, move scratchpad
+bindsym $mod+Mod5+plus [con_mark="s1"] scratchpad show
+
+## Scratchpad 2
+bindsym $mod+Shift+Mod5+ecaron unmark s2, mark s2, move scratchpad
+bindsym $mod+Mod5+ecaron [con_mark="s2"] scratchpad show
+
+## Scratchpad 3
+bindsym $mod+Shift+Mod5+scaron unmark s3, mark s3, move scratchpad
+bindsym $mod+Mod5+scaron [con_mark="s3"] scratchpad show
+
 # Resizing containers:
 #
 mode "Resize" {
@@ -149,6 +168,8 @@ mode "System" {
 }
 bindsym $mod+Ctrl+Shift+s mode "System"
 
+#
+# Rotate the screen
 bindsym $mod+Shift+t exec swaymsg -- output - transform 90
 bindsym $mod+Shift+z exec swaymsg -- output - transform 0
 
@@ -164,10 +185,10 @@ bindsym Ctrl+XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1% 
 bindsym XF86AudioMute exec pamixer -t
 bindsym XF86AudioMicMute exec pamixer --default-source -t
 
-bindsym XF86MonBrightnessUp exec brightnessctl s +5% && sh ~/.config/sway/scripts/notify-brightness.sh
-bindsym XF86MonBrightnessDown exec brightnessctl s 5%- && sh ~/.config/sway/scripts/notify-brightness.sh
-bindsym Ctrl+XF86MonBrightnessUp exec brightnessctl s +1% && sh ~/.config/sway/scripts/notify-brightness.sh
-bindsym Ctrl+XF86MonBrightnessDown exec brightnessctl s 1%- && sh ~/.config/sway/scripts/notify-brightness.sh
+bindsym XF86MonBrightnessUp exec light -A 5 && sh ~/.config/sway/scripts/notify-brightness.sh
+bindsym XF86MonBrightnessDown exec light -U 5 && sh ~/.config/sway/scripts/notify-brightness.sh
+bindsym Ctrl+XF86MonBrightnessUp exec light -A 1 && sh ~/.config/sway/scripts/notify-brightness.sh
+bindsym Ctrl+XF86MonBrightnessDown exec light -U 1 && sh ~/.config/sway/scripts/notify-brightness.sh
 
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -177,9 +198,9 @@ bindsym $mod+p exec playerctl play-pause
 bindsym $mod+n exec playerctl next
 bindsym $mod+Shift+P exec playerctl previous
 
-bindsym Print+w exec shotman -c window
-bindsym Print+o exec shotman -c output
-bindsym Print+r exec shotman -c region
+bindsym Print+w exec env XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots shotman -c window
+bindsym Print+o exec env XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots shotman -c output
+bindsym Print+r exec env XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots shotman -c region
 
 bindsym $mod+m exec wl-present mirror
 
@@ -188,5 +209,5 @@ bindsym $mod+Ctrl+v exec clipman pick --tool=CUSTOM --tool-args="fuzzel -d"
 # App keybindings
 
 bindsym $mod+Ctrl+m exec vlc ~/Music --random --loop
-bindsym $mod+Ctrl+f exec alacritty -e ranger
+bindsym $mod+Ctrl+f exec alacritty -e yazi
 bindsym $mod+Ctrl+b exec firefox

@@ -1,17 +1,27 @@
 # Remove title bar
-# titlebar_border_thickness 0  
-# titlebar_padding 0
+titlebar_border_thickness 0
+titlebar_padding 0
 
 gaps vertical 2
 gaps horizontal 2
 gaps inner 2
-default_border pixel 2
+default_border pixel 3
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused          #627AAA #6272A4 #F8F8F2 #AA72A4   #6272A4
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
+
+# Floating dialogs
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+#for_window [title="^(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set 800 600, move position center
+for_window [app_id="xarchiver"] floating enable

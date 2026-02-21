@@ -1,4 +1,4 @@
-exec_always brightnessctl s 40%
+exec_always brightnessctl s 80%
 
 exec_always pipewire
 exec_always lxpolkit
@@ -10,3 +10,5 @@ exec_always --no-startup-id dbus-update-activation-environment --all
 exec_always batsignal
 
 exec_always wl-paste -t text --watch clipman store
+
+exec_always rclone mount GDrive:Sync /home/b1aza/Sync --vfs-cache-mode writes

@@ -1,6 +1,6 @@
+include ./exec
 include ./output
 include ./input
-include ./exec
 include ./look
 include ./keybindings
 
